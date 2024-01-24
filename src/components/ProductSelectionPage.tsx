@@ -1,9 +1,21 @@
 import React, { useState } from "react";
-import styles from "./ProductSelectionPage.module.scss"; // Import the SCSS file
+import styles from "./ProductSelectionPage.module.scss";
+
+import NotionImg from "../images/notionImg.jpg";
+import AzureImg from "../images/azureImage.png";
+import JiraImg from "../images/jiraImage.png";
+import SlackImg from "../images/slackImage.jpg";
+import SlabImg from "../images/slabImage.png";
+import TrelloImg from "../images/trelloImage.png";
+import UpbaseImg from "../images/upbaseImage.png";
+import ChantyImg from "../images/chantyImage.png";
+import FleepImg from "../images/fleepImage.png";
+import SearchIcon from "../images/searchIcon.jpg";
 
 interface Product {
   id: number;
   name: string;
+  image: string;
 }
 
 const ProductSelectionPage: React.FC = () => {
@@ -12,16 +24,15 @@ const ProductSelectionPage: React.FC = () => {
   const [searchResults, setSearchResults] = useState<Product[]>([]);
 
   const productData: Product[] = [
-    { id: 1, name: "Notion" },
-    { id: 2, name: "Jira" },
-    { id: 3, name: "MS Azure" },
-    { id: 4, name: "Slack" },
-    { id: 5, name: "Slow" },
-    { id: 6, name: "Trello" },
-    { id: 7, name: "JiraCompete" },
-    { id: 8, name: "NoOpenSpeed" },
-    { id: 9, name: "Noimics" },
-    { id: 10, name: "NoierBooks" },
+    { id: 1, image: NotionImg, name: "Notion" },
+    { id: 2, image: JiraImg, name: "Jira" },
+    { id: 3, image: AzureImg, name: "MS Azure" },
+    { id: 4, image: SlackImg, name: "Slack" },
+    { id: 5, image: SlabImg, name: "Slab" },
+    { id: 6, image: TrelloImg, name: "Trello" },
+    { id: 7, image: UpbaseImg, name: "Upbase" },
+    { id: 8, image: ChantyImg, name: "Chanty" },
+    { id: 9, image: FleepImg, name: "Fleep" },
   ];
 
   const handleSearch = (input: string) => {
@@ -66,22 +77,29 @@ const ProductSelectionPage: React.FC = () => {
           Search to quickly add products your team uses today. You'll be able to
           add as many as you need later but for now let's add four.
         </p>
-        <input
-          type="text"
-          placeholder="Search for products"
-          value={searchInput}
-          onChange={(e) => handleSearch(e.target.value)}
-        />
-        <ul className={styles.searchResults}>
-          {searchResults.map((product) => (
-            <li
-              key={product.id}
-              onClick={() => handleProductSelect(product.id)}
-            >
-              {product.name}
-            </li>
-          ))}
-        </ul>
+        <div className={styles.dropdownContainer}>
+          <div className={styles.searchInputContainer}>
+            <input
+              type="text"
+              placeholder="Search for products"
+              value={searchInput}
+              onChange={(e) => handleSearch(e.target.value)}
+            />
+          </div>
+          {searchResults.length > 0 && (
+            <ul className={styles.searchResults}>
+              {searchResults.map((product) => (
+                <li
+                  key={product.id}
+                  onClick={() => handleProductSelect(product.id)}
+                >
+                  <img src={product.image} alt={product.name} />
+                  {product.name}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         <button className={styles.nextButton} onClick={handleNextButtonClick}>
           Next
         </button>
