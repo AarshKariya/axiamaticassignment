@@ -65,4 +65,4 @@ The available products are as follows
 
 Next Button Click
 
-- As there was no API endpoint to save the data, currently upon clicking Next, the data will be logged in the browser console.
+- A mock api call is made which will log the response in the console after a second.

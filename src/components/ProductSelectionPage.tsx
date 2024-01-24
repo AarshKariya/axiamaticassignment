@@ -12,6 +12,18 @@ const ProductSelectionPage: React.FC = () => {
   const [searchInput, setSearchInput] = useState<string>("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
 
+  const mockApiCall = (data: Product[]) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (data) {
+          resolve({ status: "success", data });
+        } else {
+          reject({ status: "error", message: "Data not available. Error!!!!" });
+        }
+      }, 1000);
+    });
+  };
+
   const handleSearch = (input: string) => {
     setSearchInput(input);
     if (input.trim() === "") {
@@ -51,7 +63,13 @@ const ProductSelectionPage: React.FC = () => {
   };
 
   const handleNextButtonClick = () => {
-    console.log("Selected Products:", selectedProducts);
+    mockApiCall(selectedProducts)
+      .then((response) => {
+        console.log("API Call Successful:", response);
+      })
+      .catch((error) => {
+        console.error("API Call Failed:", error);
+      });
   };
 
   return (
