@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "../ProductSelectionPage.module.scss";
+import { Product } from "../../helpers/productData";
 
 interface NextButtonClickProps {
-  handleNextButtonClick: any;
-  selectedProducts: any[];
+  handleNextButtonClick: () => void;
+  selectedProducts: Product[];
 }
 
 const NextButton: React.FC<NextButtonClickProps> = ({

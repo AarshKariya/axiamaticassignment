@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "../ProductSelectionPage.module.scss";
+import { Product } from "../../helpers/productData";
 
 interface DropdownContainerProps {
   searchInput: string;
-  handleSearch: any;
-  handleBlur: any;
-  searchResults: any[];
-  handleProductSelect: any;
-  selectedProducts: any[];
+  handleSearch: (input: string) => void;
+  handleBlur: () => void;
+  searchResults: Product[];
+  handleProductSelect: (productId: number) => void;
+  selectedProducts: Product[];
 }
 
 const DropdownContainer: React.FC<DropdownContainerProps> = ({
@@ -23,7 +24,7 @@ const DropdownContainer: React.FC<DropdownContainerProps> = ({
       <div className={styles.searchInputContainer}>
         <input
           type="text"
-          placeholder="Search for products"
+          placeholder="Search for any software..."
           value={searchInput}
           onChange={(e) => handleSearch(e.target.value)}
           onBlur={handleBlur}

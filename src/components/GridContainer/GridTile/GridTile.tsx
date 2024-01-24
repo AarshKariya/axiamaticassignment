@@ -3,7 +3,7 @@ import styles from "../../ProductSelectionPage.module.scss";
 
 interface GridTileProps {
   selectedProduct: any;
-  handleRemoveProduct: any;
+  handleRemoveProduct: (productId: number) => void;
 }
 
 const GridTile: React.FC<GridTileProps> = ({

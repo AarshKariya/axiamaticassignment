@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "../ProductSelectionPage.module.scss";
 import GridTile from "./GridTile/GridTile";
+import { Product } from "../../helpers/productData";
 
 interface GridContainerProps {
-  selectedProducts: any[];
-  handleRemoveProduct: any;
+  selectedProducts: Product[];
+  handleRemoveProduct: (productId: number) => void;
 }
 
 const GridContainer: React.FC<GridContainerProps> = ({
