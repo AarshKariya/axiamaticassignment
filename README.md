@@ -44,3 +44,21 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Demo
+
+Checkout the demo at [Axiamatic Assignment](https://65b0c15f1257f753deb5edb9--gregarious-lily-b254b4.netlify.app/)!
+
+## Notes:
+
+The available products are as follows:
+
+    - Notion
+    - Jira
+    - MS Azure
+    - Slack
+    - Slab
+    - Trello
+    - Upbase
+    - Chanty
+    - Fleep
