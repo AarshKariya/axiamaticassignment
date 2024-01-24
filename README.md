@@ -51,18 +51,18 @@ Checkout the demo at [Axiamatic Assignment](https://65b0c15f1257f753deb5edb9--gr
 
 ## Notes:
 
-- The available products are as follows:
+The available products are as follows
 
-  - Notion
-  - Jira
-  - MS Azure
-  - Slack
-  - Slab
-  - Trello
-  - Upbase
-  - Chanty
-  - Fleep
+- Notion
+- Jira
+- MS Azure
+- Slack
+- Slab
+- Trello
+- Upbase
+- Chanty
+- Fleep
 
-Next Button Click:
+Next Button Click
 
-    - As there was no API endpoint to save the data, currently upon clicking Next, the data will be logged in the browser console.
+- As there was no API endpoint to save the data, currently upon clicking Next, the data will be logged in the browser console.
